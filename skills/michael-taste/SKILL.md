@@ -68,7 +68,7 @@ His words in the conversation win, then the repo's conventions and design system
 - No speculative machinery: special cases, retry counters, extra props, guards, caps, regex heuristics, "just in case" backstops. Forcing a tool for accuracy (calculator for maths) is fine.
 - Typed, maintained packages and plugins over hand-rolling. Heavy libs stay out of browser bundles. Simplest architecture: one app, one domain, direct connections.
 - Use the project's layers: its data-fetching layer not raw `fetch`, the ORM in tests, TypeScript scripts, IaC for infra (a CLI hotfix only alongside the IaC change).
-- Style, unless the linter says otherwise: braced guard clauses with a blank line after; no other blank lines in functions; inline trivial temporaries; don't thread flags through layers when the data is reachable.
+- Style, unless the linter says otherwise: braced guard clauses with a blank line after; no other blank lines in functions; inline trivial temporaries; don't thread flags through layers when the data is reachable; conditional JSX uses `cond && <X />`, not `cond ? null : <X />`, with a boolean on the left so a `0` never renders.
 - Comments: short `/** */` per function; otherwise rare and brief; no banners.
 - Tests: failing test first for bugs; test real behaviour; don't duplicate e2e coverage; thorough tests for payments, sign-up and cancellation.
 - Delete leftovers after switching approaches, plus unused fields and dead config. No redirects for moved routes before launch.
